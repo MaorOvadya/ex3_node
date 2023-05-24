@@ -13,8 +13,7 @@ router.get("/leaveNote", (req, res, next) => {
 router.get("/readNote", (req, res, next) => {
   res.sendFile(path.join(rootDir, "views", "readNote.html"));
 });
-router.post("/readNote", (req, res, next) => {
-  console.log(req.body);
+router.post("/leaveNote", (req, res, next) => {
   fs.appendFile(
     path.join(rootDir, "views", "readNote.html"),
     `<li>${req.body.route}</li>`,

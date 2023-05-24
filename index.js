@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
+
 app.use("/route", require("./router/route"));
 
 app.use("/", (req, res, next) => {
